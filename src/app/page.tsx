@@ -5,7 +5,7 @@ import EventGallery from '@/components/EventGallery'
 export default function Home() {
   return (
     <>
-      <section id="hero" className="relative text-white py-24 bg-cover bg-center" style={{ backgroundImage: "url('/images/05A0CCF0-B426-494C-9A84-BA2DEDA6A7CE_1_102_o.jpeg')" }}>
+      <section id="hero" className="relative text-white py-24 bg-cover bg-center animate-fadeIn" style={{ backgroundImage: "url('/images/05A0CCF0-B426-494C-9A84-BA2DEDA6A7CE_1_102_o.jpeg')" }}>
         <div className="absolute inset-0 bg-gray-900/60" />
         <div className="max-w-6xl mx-auto px-4 text-center relative z-10">
           <Image
@@ -22,7 +22,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="info-cards" className="py-16 bg-gray-50">
+      <section id="info-cards" className="py-16 bg-gray-50 animate-fadeInUp">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
@@ -60,7 +60,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="ministerios" className="py-16">
+      <section id="ministerios" className="py-16 animate-fadeInUp">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-primary text-center mb-12">Nuestros Ministerios</h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
@@ -71,7 +71,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="eventos" className="py-16 bg-gray-50">
+      <section id="eventos" className="py-16 bg-gray-50 animate-fadeInUp">
         <div className="max-w-6xl mx-auto px-4">
           {homeEvents.reduce<JSX.Element[][]>((groups, event, i) => {
             const groupIndex = Math.floor(i / 3)

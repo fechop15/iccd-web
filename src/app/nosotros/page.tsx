@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import { documents } from '@/lib/data'
-import { FileText } from 'lucide-react'
+import PDFViewer from '@/components/PDFViewer'
 
 export default function Nosotros() {
   return (
     <>
-      <section id="nosotros-banner" className="relative text-white py-24 bg-cover bg-center" style={{ backgroundImage: "url('/images/05A0CCF0-B426-494C-9A84-BA2DEDA6A7CE_1_102_o.jpeg')" }}>
+      <section id="nosotros-banner" className="relative text-white py-24 bg-cover bg-center animate-fadeIn" style={{ backgroundImage: "url('/images/05A0CCF0-B426-494C-9A84-BA2DEDA6A7CE_1_102_o.jpeg')" }}>
         <div className="absolute inset-0 bg-gray-900/60" />
         <div className="relative z-10 max-w-6xl mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">
@@ -18,7 +18,7 @@ export default function Nosotros() {
         </div>
       </section>
 
-      <section id="nosotros" className="bg-gray-50 py-16">
+      <section id="nosotros" className="bg-gray-50 py-16 animate-fadeInUp">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 mb-16">
             <div>
@@ -38,20 +38,7 @@ export default function Nosotros() {
               </p>
 
               <h2 className="text-2xl font-bold text-primary mt-12 mb-6">Régimen Tributario Especial</h2>
-              <div className="space-y-3">
-                {documents.map((doc, i) => (
-                  <a
-                    key={i}
-                    href={doc.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 p-3 bg-white rounded-md shadow-sm hover:shadow-md transition-shadow text-primary hover:text-secondary"
-                  >
-                    <FileText className="w-5 h-5 text-secondary flex-shrink-0" />
-                    <span className="text-sm font-medium">{doc.name}</span>
-                  </a>
-                ))}
-              </div>
+              <PDFViewer documents={documents} />
             </div>
 
             <div>

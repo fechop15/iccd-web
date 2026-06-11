@@ -7,13 +7,13 @@ type Props = {
 
 export default function MinistryCard({ name, image }: Props) {
   return (
-    <div className="relative group rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+    <div className="relative group rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
       <Image
         src={image}
         alt={name}
         width={300}
         height={300}
-        className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 p-4 text-center">

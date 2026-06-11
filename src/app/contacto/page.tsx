@@ -5,7 +5,7 @@ import { MapPin, Clock, Phone } from 'lucide-react'
 export default function Contacto() {
   return (
     <>
-      <section id="contacto" className="bg-gray-50 py-16">
+      <section id="contacto" className="bg-gray-50 py-16 animate-fadeInUp">
         <div className="max-w-6xl mx-auto px-4">
           <h1 className="text-3xl md:text-4xl font-bold text-primary mb-6 text-center">
             Contacto
