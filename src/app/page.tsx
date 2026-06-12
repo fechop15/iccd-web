@@ -24,6 +24,7 @@ export default async function Home() {
             alt={siteInfo.shortName}
             width={120}
             height={120}
+            priority
             className="mx-auto mb-6"
           />
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
