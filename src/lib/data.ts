@@ -58,14 +58,14 @@ export const newsEvents: Event[] = [
 ]
 
 export const documents = [
-  { name: "Cámara de Comercio de Sincelejo 2026", url: "/documents/CAMARA DE COMERCIO.PDF" },
+  { name: "Cámara de Comercio de Sincelejo 2026", url: "/documents/CAMARA DE COMERCIO.pdf" },
   { name: "Informe de Gestión e Ingresos ICCD 2026", url: "/documents/INFORME DE GESTION  ICCD-2025.pdf" },
   { name: "Estatutos ICCD", url: "/documents/ESTATUTOS ICCD.pdf" },
-  { name: "Acta de Constitución", url: "/documents/ACTA DE CONSTITUCIÓN.pdf" },
-  { name: "Acta de Reunión Junta Directiva 2026", url: "/documents/ACTA DE REUNIÓN JUNTA DIRECTIVA 2026.pdf" },
+  { name: "Acta de Constitución", url: "/documents/ACTA DE CONSTITUCION.pdf" },
+  { name: "Acta de Reunión Junta Directiva 2026", url: "/documents/ACTA DE REUNION JUNTA DIRECTIVA 2026.pdf" },
   { name: "Certificado de Antecedentes Judiciales 2026", url: "/documents/ANTECEDENTES JUDICIALES 2026.pdf" },
   { name: "Declaración de Renta ICCD 2026", url: "/documents/DECLARACION DE RENTA ICCD 2026.pdf" },
   { name: "RUT ICCD 2026", url: "/documents/RUT ACTUALIZADO ICCD.pdf" },
-  { name: "Resolución Régimen Especial 2112 de 2022", url: "/documents/RESOLUCIÓN REGIMEN ESPECIAL.pdf" },
+  { name: "Resolución Régimen Especial 2112 de 2022", url: "/documents/RESOLUCION REGIMEN ESPECIAL.pdf" },
   { name: "Estado Financiero de Apertura", url: "/documents/ESTADO FINANCIERO DE APERTURA.pdf" },
 ]
