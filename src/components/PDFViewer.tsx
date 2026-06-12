@@ -1,10 +1,20 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import { X, FileText } from 'lucide-react'
 
 export default function PDFViewer({ documents }: { documents: { name: string; url: string }[] }) {
   const [selected, setSelected] = useState<{ name: string; url: string } | null>(null)
+
+  useEffect(() => {
+    if (selected) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => { document.body.style.overflow = '' }
+  }, [selected])
 
   return (
     <>
@@ -21,8 +31,8 @@ export default function PDFViewer({ documents }: { documents: { name: string; ur
         ))}
       </div>
 
-      {selected && (
-        <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4" onClick={() => setSelected(null)}>
+      {selected && createPortal(
+        <div className="fixed inset-0 z-[60] bg-black/80 flex items-center justify-center p-4" onClick={() => setSelected(null)}>
           <div className="relative w-full max-w-4xl h-[90vh] bg-white rounded-lg overflow-hidden" onClick={(e) => e.stopPropagation()}>
             <div className="flex items-center justify-between p-3 border-b bg-white">
               <h3 className="text-sm font-semibold text-primary truncate">{selected.name}</h3>
@@ -32,7 +42,8 @@ export default function PDFViewer({ documents }: { documents: { name: string; ur
             </div>
             <iframe src={selected.url} className="w-full h-[calc(90vh-52px)]" title={selected.name} />
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   )
