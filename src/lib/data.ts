@@ -5,12 +5,12 @@ export const siteInfo = {
   description: "Adoramos a Dios y servimos en Cristo",
   phone: "(+57) 3218746472",
   email: "iccdsincelejo@gmail.com",
-  address: "Calle 26 No. 16A - 82 (Sabanas de Nariño)",
+  address: "Carrera 16A No.26 - 37",
   schedule: {
     weekdays: "Lunes a viernes de 8:00am – 6:00pm",
     saturday: "Sábado 8:00am – 12:m",
   },
-  whatsapp: "https://wa.me/+573137205269",
+  whatsapp: "https://wa.me/+573218746472",
   social: {
     facebook: "#",
     instagram: "#",
