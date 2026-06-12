@@ -46,7 +46,7 @@ export default async function Nosotros() {
                 alt={info.name}
                 width={600}
                 height={400}
-                className="w-full rounded-lg shadow-md mb-6"
+                className="lazy-bg w-full rounded-lg shadow-md mb-6"
               />
               <p className="text-gray-700 leading-relaxed">{info.aboutText}</p>
             </div>

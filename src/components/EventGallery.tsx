@@ -20,7 +20,7 @@ export default function EventGallery({ events }: Props) {
                 alt={event.title}
                 width={400}
                 height={300}
-                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                className="lazy-bg w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               <h3 className="absolute bottom-4 left-4 right-4 text-white font-semibold text-sm">
