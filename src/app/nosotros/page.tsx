@@ -1,8 +1,12 @@
 import Image from 'next/image'
-import { documents } from '@/lib/data'
+import { documents as localDocs } from '@/lib/data'
+import { getDocuments } from '@/lib/contentful'
 import PDFViewer from '@/components/PDFViewer'
 
-export default function Nosotros() {
+export default async function Nosotros() {
+  const cmsDocs = await getDocuments()
+  const documents = cmsDocs.length > 0 ? cmsDocs : localDocs
+
   return (
     <>
       <section id="nosotros-banner" className="relative text-white py-24 bg-cover bg-center animate-fadeIn" style={{ backgroundImage: "url('/images/05A0CCF0-B426-494C-9A84-BA2DEDA6A7CE_1_102_o.jpeg')" }}>

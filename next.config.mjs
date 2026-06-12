@@ -4,6 +4,7 @@ const nextConfig = {
     remotePatterns: [
       { protocol: 'https', hostname: 'iccdsincelejo.com.co' },
       { protocol: 'https', hostname: 'iccdsincelejo.co' },
+      { protocol: 'https', hostname: 'images.ctfassets.net' },
     ],
   },
 }
