@@ -16,7 +16,34 @@ export const siteInfo = {
     instagram: "#",
     youtube: "#",
   },
+  heroImage: "/images/05A0CCF0-B426-494C-9A84-BA2DEDA6A7CE_1_102_o.jpeg",
+  aboutHeroImage: "/images/05A0CCF0-B426-494C-9A84-BA2DEDA6A7CE_1_102_o.jpeg",
+  aboutImage: "/images/05A0CCF0-B426-494C-9A84-BA2DEDA6A7CE_1_102_o.jpeg",
+  visionTitle: "Visión",
+  visionText: "Ser una Iglesia que Glorifique, ame y sirva a Dios con unidad doctrinal, fraternal; guiada por el Espíritu Santo, y basada en las sagradas Escrituras, con crecimiento permanente, estabilidad y sostenibilidad.",
+  missionTitle: "Misión",
+  missionText: "Adorar a Dios, Reconciliar a los hombres con Dios a través de la proclamación del evangelio de Jesucristo. Instruirlos en la doctrina y fundamento de las Sagradas Escrituras, enseñándoles a vivir en comunión con Dios y con los demás, sirviendo a la sociedad y a los necesitados.",
+  aboutTitle: "Identidad",
+  aboutText: "En obediencia al mandato del Señor Jesucristo de enseñar y predicar su santo evangelio, bajo la dirección del Espíritu Santo, y basados en el artículo 19 de la CPN de 1991, y la ley 133 de 1994, encausamos esfuerzos en alcanzar la visión de ser una Iglesia multiplicadora de discípulos suyos, de generaciones a generaciones.",
+  googleMapsUrl: "https://www.google.com/maps?q=Calle+26+No.+16A-82+Sabanas+de+Nariño+Sincelejo+Colombia&output=embed",
+  contactPerson: "Diana Atencia - Secretaria Pastoral ICCD",
+  metaTitle: "Iglesia Cristiana Casa de Dios Sincelejo | Asociación cristiana casa de Dios",
+  metaDescription: "Adoramos a Dios y servimos en Cristo",
+  copyright: "Todos los derechos reservados.",
 }
+
+export const infoCards = [
+  { title: "Identidad", text: "Misión\nVisión\nValores\nNuestra fe" },
+  { title: "Contacto", text: "Línea de atención en Sincelejo\n(+57) 3218746472" },
+  { title: "Ubicación", text: "Carrera 16A No.26 - 37" },
+]
+
+export const navItems = [
+  { label: 'Asociación Cristiana Casa de Dios', href: '/' },
+  { label: 'Nosotros', href: '/nosotros' },
+  { label: 'Publicaciones', href: '/noticias' },
+  { label: 'Contacto', href: '/contacto' },
+]
 
 export const ministries = [
   { name: "Ministerio de Danza", count: 9, image: "/images/ministerio-danza.jpeg" },

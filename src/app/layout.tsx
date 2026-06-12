@@ -2,10 +2,11 @@ import type { Metadata } from 'next'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { siteInfo } from '@/lib/data'
 
 export const metadata: Metadata = {
-  title: 'Iglesia Cristiana Casa de Dios Sincelejo | Asociación cristiana casa de Dios',
-  description: 'Adoramos a Dios y servimos en Cristo',
+  title: siteInfo.metaTitle,
+  description: siteInfo.metaDescription,
 }
 
 export default function RootLayout({

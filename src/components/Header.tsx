@@ -3,14 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
-import { siteInfo } from '@/lib/data'
-
-const navItems = [
-  { label: 'Asociación Cristiana Casa de Dios', href: '/' },
-  { label: 'Nosotros', href: '/nosotros' },
-  { label: 'Publicaciones', href: '/noticias' },
-  { label: 'Contacto', href: '/contacto' },
-]
+import { siteInfo, navItems } from '@/lib/data'
 
 export default function Header() {
   const [open, setOpen] = useState(false)

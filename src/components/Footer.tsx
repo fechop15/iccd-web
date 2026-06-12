@@ -14,7 +14,7 @@ export default function Footer() {
               <h3 className="font-semibold text-[#ffb400]">Ubicación</h3>
             </div>
             <a
-              href="https://www.google.com/maps/@9.2979615,-75.3930829,3a,75y,205.64h,78.76t/data=!3m6!1e1!3m4!1sXW-IkERj7gu8ED104h_6NQ!2e0!7i13312!8i6656?hl=es"
+              href={siteInfo.googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-gray-300 hover:text-white transition-colors"

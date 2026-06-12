@@ -1,8 +1,12 @@
-import { siteInfo } from '@/lib/data'
+import { siteInfo as localInfo } from '@/lib/data'
+import { getSiteInfo } from '@/lib/contentful'
 import SocialBar from '@/components/SocialBar'
 import { MapPin, Clock, Phone } from 'lucide-react'
 
-export default function Contacto() {
+export default async function Contacto() {
+  const cmsInfo = await getSiteInfo().catch(() => null)
+  const info = cmsInfo || localInfo
+
   return (
     <>
       <section id="contacto" className="bg-gray-50 py-16 animate-fadeInUp">
@@ -18,14 +22,14 @@ export default function Contacto() {
             <div className="text-center p-6 bg-white rounded-lg shadow-md">
               <MapPin className="w-10 h-10 text-secondary mx-auto mb-4" />
               <h3 className="font-bold text-primary mb-2">Ubicación</h3>
-              <p className="text-sm text-gray-600">{siteInfo.address}</p>
+              <p className="text-sm text-gray-600">{info.address}</p>
             </div>
             <div className="text-center p-6 bg-white rounded-lg shadow-md">
               <Clock className="w-10 h-10 text-secondary mx-auto mb-4" />
               <h3 className="font-bold text-primary mb-2">Horario</h3>
               <p className="text-sm text-gray-600">
-                {siteInfo.schedule.weekdays}<br />
-                {siteInfo.schedule.saturday}
+                {info.schedule.weekdays}<br />
+                {info.schedule.saturday}
               </p>
             </div>
             <div className="text-center p-6 bg-white rounded-lg shadow-md">
@@ -33,14 +37,14 @@ export default function Contacto() {
               <h3 className="font-bold text-primary mb-2">Contacto</h3>
               <p className="text-sm text-gray-600">
                 Línea de atención en Sincelejo<br />
-                {siteInfo.phone}
+                {info.phone}
               </p>
             </div>
           </div>
 
           <div className="mb-12 rounded-lg overflow-hidden shadow-md">
             <iframe
-              src="https://www.google.com/maps?q=Calle+26+No.+16A-82+Sabanas+de+Nariño+Sincelejo+Colombia&output=embed"
+              src={info.googleMapsUrl}
               width="100%"
               height="400"
               style={{ border: 0 }}
@@ -55,13 +59,13 @@ export default function Contacto() {
 
           <div className="text-center mt-12">
             <p className="text-lg font-semibold text-primary mb-2">
-              Cel: {siteInfo.phone}
+              Cel: {info.phone}
             </p>
             <p className="text-gray-600 text-sm mb-4">
-              Diana Atencia - Secretaria Pastoral ICCD
+              {info.contactPerson}
             </p>
             <a
-              href={siteInfo.whatsapp}
+              href={info.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-green-500 text-white font-semibold px-8 py-3 rounded-md hover:bg-green-600 transition-colors"
