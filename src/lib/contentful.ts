@@ -9,7 +9,7 @@ function getClient() {
 
 function assetUrl(asset: any): string {
   const url = asset?.fields?.file?.url
-  return url ? `https:${url}` : '#'
+  return url ? `https:${url}` : ''
 }
 
 export async function getDocuments() {
@@ -18,7 +18,7 @@ export async function getDocuments() {
   const res = await client.getEntries({ content_type: 'document', order: ['sys.createdAt'], include: 1 })
   return res.items.map((item: any) => ({
     name: item.fields.title,
-    url: assetUrl(item.fields.file),
+    url: assetUrl(item.fields.file) || '#',
   }))
 }
 
@@ -29,7 +29,7 @@ export async function getEvents() {
   return res.items.map((item: any) => ({
     title: item.fields.title,
     image: assetUrl(item.fields.image),
-  }))
+  })).filter(e => e.image)
 }
 
 export async function getMinistries() {
@@ -39,7 +39,7 @@ export async function getMinistries() {
   return res.items.map((item: any) => ({
     name: item.fields.name,
     image: assetUrl(item.fields.image),
-  }))
+  })).filter(m => m.image)
 }
 
 export async function getInfoCards() {
@@ -71,7 +71,7 @@ export async function getSiteInfo() {
   return {
     name: String(i.name ?? ''),
     shortName: String(i.shortName ?? ''),
-    logo: assetUrl(i.logo),
+    logo: assetUrl(i.logo) || '/images/LOGO-ICCD.png',
     description: String(i.description ?? ''),
     phone: String(i.phone ?? ''),
     email: String(i.email ?? ''),
