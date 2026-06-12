@@ -7,6 +7,7 @@ import { siteInfo } from '@/lib/data'
 export const metadata: Metadata = {
   title: siteInfo.metaTitle,
   description: siteInfo.metaDescription,
+  icons: { icon: '/images/LOGO-ICCD.png' },
 }
 
 export default function RootLayout({
