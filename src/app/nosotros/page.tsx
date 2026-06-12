@@ -4,7 +4,11 @@ import { getDocuments } from '@/lib/contentful'
 import PDFViewer from '@/components/PDFViewer'
 
 export default async function Nosotros() {
-  const cmsDocs = await getDocuments()
+  let cmsDocs: typeof localDocs = []
+  try {
+    const docs = await getDocuments()
+    if (docs.length > 0) cmsDocs = docs
+  } catch {}
   const documents = cmsDocs.length > 0 ? cmsDocs : localDocs
 
   return (

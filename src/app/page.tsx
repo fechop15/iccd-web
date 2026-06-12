@@ -1,8 +1,17 @@
 import Image from 'next/image'
-import { siteInfo, ministries, homeEvents } from '@/lib/data'
+import { siteInfo as localInfo, ministries as localMinistries, homeEvents as localEvents } from '@/lib/data'
+import { getEvents, getMinistries, getSiteInfo } from '@/lib/contentful'
 import MinistryCard from '@/components/MinistryCard'
-import EventGallery from '@/components/EventGallery'
-export default function Home() {
+
+export default async function Home() {
+  const [cmsSiteInfo, cmsMinistries, cmsEvents] = await Promise.all([
+    getSiteInfo().catch(() => null),
+    getMinistries().catch(() => []),
+    getEvents().catch(() => []),
+  ])
+  const siteInfo = cmsSiteInfo || localInfo
+  const ministries = cmsMinistries.length > 0 ? cmsMinistries : localMinistries
+  const homeEvents = cmsEvents.length > 0 ? cmsEvents : localEvents
   return (
     <>
       <section id="hero" className="relative text-white py-24 bg-cover bg-center animate-fadeIn" style={{ backgroundImage: "url('/images/05A0CCF0-B426-494C-9A84-BA2DEDA6A7CE_1_102_o.jpeg')" }}>
